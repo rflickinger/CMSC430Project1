@@ -1,0 +1,4 @@
+compile
+*.o
+*.c
+*.txt
