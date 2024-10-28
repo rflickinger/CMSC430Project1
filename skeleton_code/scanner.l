@@ -20,7 +20,7 @@ using namespace std;
 %option noyywrap
 
 ws		[ \t\r]+
-comment		"//".*\n
+comment		("//"|"--").*\n
 line		[\n]
 id		[A-Za-z]([A-Za-z0-9])*
 digit		[0-9]
