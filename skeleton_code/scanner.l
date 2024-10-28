@@ -33,7 +33,12 @@ punc		[\(\),:;]
 {comment}	{ ECHO; nextLine(); }
 {line}		{ ECHO; nextLine(); }
 "+"		{ ECHO; return(ADDOP); }
+"-"		{ ECHO; return(ADDOP); }
 "*"		{ ECHO; return(MULOP); }
+"/"		{ ECHO; return(MULOP); }
+"%"		{ ECHO; return(REMOP); }
+"^"		{ ECHO; return(EXPOP); }
+"~"		{ ECHO; return(NEGOP); }
 "&"		{ ECHO; return(ANDOP); }
 "|"		{ ECHO; return(OROP); }
 "!"		{ ECHO; return(NOTOP); }
