@@ -2,6 +2,7 @@
 // Project 1 Skeleton
 // UMGC CITE
 // Summer 2023
+// Additional development by: Ryan Flickinger
 
 // This file contains the enumerated type definition for tokens
 
