@@ -35,7 +35,14 @@ punc		[\(\),:;]
 "+"		{ ECHO; return(ADDOP); }
 "*"		{ ECHO; return(MULOP); }
 "&"		{ ECHO; return(ANDOP); }
+"|"		{ ECHO; return(OROP); }
+"!"		{ ECHO; return(NOTOP); }
+"="		{ ECHO; return(RELOP); }
 "<"		{ ECHO; return(RELOP); }
+">"		{ ECHO; return(RELOP); }
+"<>"	{ ECHO; return(RELOP); }
+"<="	{ ECHO; return(RELOP); }
+">="	{ ECHO; return(RELOP); }
 "=>"		{ ECHO; return(ARROW); }
 begin		{ ECHO; return(BEGIN_); }
 case		{ ECHO; return(CASE); }
