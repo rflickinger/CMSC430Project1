@@ -51,6 +51,15 @@ others		{ ECHO; return(OTHERS); }
 returns		{ ECHO; return(RETURNS); }
 switch		{ ECHO; return(SWITCH); }
 when		{ ECHO; return(WHEN); }
+else		{ ECHO; return(ELSE); }
+elsif		{ ECHO; return(ELSIF); }
+endfold		{ ECHO; return(ENDFOLD); }
+fold		{ ECHO; return(FOLD); }
+if			{ ECHO; return(IF); }
+left		{ ECHO; return(LEFT); }
+real		{ ECHO; return(REAL); }
+right		{ ECHO; return(RIGHT); }
+then		{ ECHO; return(THEN); }
 
 {id}		{ ECHO; return(IDENTIFIER);}
 {dec}		{ ECHO; return(INT_LITERAL); }
