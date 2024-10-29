@@ -1,0 +1,36 @@
+/* Testing all given functionality 
+* Developer: Ryan Flickinger
+* Date: 10/29/24
+*/
+
+// Added reserved words
+else elsif endfold endif fold if left real right then
+
+// Logical operators
+| !
+
+// Relational operators
+= <> > >= <=
+
+// Arithmetic operators
+- / & ~
+
+-- New style comments
+
+-- Hexadecimal Literals
+-- Positive
+#3adf321c
+-- Negative
+#mn09
+3af#
+
+-- Real Literals
+-- Positive
+123.23E3
+123.23e3
+
+-- Character Literals
+-- Positive
+'\b' '\t' '\n' '\r' '\f'
+-- Negative
+'\b\b\b' '\d'
