@@ -29,6 +29,7 @@ hectal	[0-9A-Fa-f]
 hex		#({hectal})+
 char		\\[btnrf]|'[^'\\]*(?:\\[btnrf][^'\\]*)*'
 punc		[\(\),:;]
+real        [\+-]?((([0-9]+\.[0-9]*|\.[0-9]+)([eE][\+-]?[0-9]+)?)|[0-9]+[eE][\+-]?[0-9]+)
 %%
 
 {ws}		{ ECHO; }
@@ -59,6 +60,7 @@ endswitch	{ ECHO; return(ENDSWITCH); }
 function	{ ECHO; return(FUNCTION); }
 integer		{ ECHO; return(INTEGER); }
 {hex}	 	{ ECHO; return(INTEGER); }
+{real}      { ECHO; return(REAL); }
 is		{ ECHO; return(IS); }
 list		{ ECHO; return(LIST); }
 of		{ ECHO; return(OF); }
