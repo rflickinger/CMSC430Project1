@@ -19,14 +19,14 @@ using namespace std;
 
 %option noyywrap
 
-ws		[ \t\r]+
+ws		    [ \t\r]+
 comment		("//"|"--").*\n
 line		[\n]
-id		[A-Za-z]([A-Za-z0-9])*
+id          [A-Za-z]([_]?[A-Za-z0-9]|__)*[A-Za-z0-9]*
 digit		[0-9]
-dec		{digit}+
-hectal	[0-9A-Fa-f]
-hex		#({hectal})+
+dec		    {digit}+
+hectal	    [0-9A-Fa-f]
+hex		    #({hectal})+
 char		\\[btnrf]|'[^'\\]*(?:\\[btnrf][^'\\]*)*'
 punc		[\(\),:;]
 real        [\+-]?((([0-9]+\.[0-9]*|\.[0-9]+)([eE][\+-]?[0-9]+)?)|[0-9]+[eE][\+-]?[0-9]+)
@@ -35,35 +35,35 @@ real        [\+-]?((([0-9]+\.[0-9]*|\.[0-9]+)([eE][\+-]?[0-9]+)?)|[0-9]+[eE][\+-
 {ws}		{ ECHO; }
 {comment}	{ ECHO; nextLine(); }
 {line}		{ ECHO; nextLine(); }
-"+"		{ ECHO; return(ADDOP); }
-"-"		{ ECHO; return(ADDOP); }
-"*"		{ ECHO; return(MULOP); }
-"/"		{ ECHO; return(MULOP); }
-"%"		{ ECHO; return(REMOP); }
-"^"		{ ECHO; return(EXPOP); }
-"~"		{ ECHO; return(NEGOP); }
-"&"		{ ECHO; return(ANDOP); }
-"|"		{ ECHO; return(OROP); }
-"!"		{ ECHO; return(NOTOP); }
-"="		{ ECHO; return(RELOP); }
-"<"		{ ECHO; return(RELOP); }
-">"		{ ECHO; return(RELOP); }
-"<>"	{ ECHO; return(RELOP); }
-"<="	{ ECHO; return(RELOP); }
-">="	{ ECHO; return(RELOP); }
+"+"		    { ECHO; return(ADDOP); }
+"-"		    { ECHO; return(ADDOP); }
+"*"		    { ECHO; return(MULOP); }
+"/"		    { ECHO; return(MULOP); }
+"%"		    { ECHO; return(REMOP); }
+"^"		    { ECHO; return(EXPOP); }
+"~"		    { ECHO; return(NEGOP); }
+"&"		    { ECHO; return(ANDOP); }
+"|"		    { ECHO; return(OROP); }
+"!"		    { ECHO; return(NOTOP); }
+"="		    { ECHO; return(RELOP); }
+"<"		    { ECHO; return(RELOP); }
+">"		    { ECHO; return(RELOP); }
+"<>"	    { ECHO; return(RELOP); }
+"<="	    { ECHO; return(RELOP); }
+">="	    { ECHO; return(RELOP); }
 "=>"		{ ECHO; return(ARROW); }
 begin		{ ECHO; return(BEGIN_); }
 case		{ ECHO; return(CASE); }
 character	{ ECHO; return(CHARACTER); }
-end		{ ECHO; return(END); }
+end		    { ECHO; return(END); }
 endswitch	{ ECHO; return(ENDSWITCH); }
 function	{ ECHO; return(FUNCTION); }
 integer		{ ECHO; return(INTEGER); }
 {hex}	 	{ ECHO; return(INTEGER); }
 {real}      { ECHO; return(REAL); }
-is		{ ECHO; return(IS); }
+is		    { ECHO; return(IS); }
 list		{ ECHO; return(LIST); }
-of		{ ECHO; return(OF); }
+of		    { ECHO; return(OF); }
 others		{ ECHO; return(OTHERS); }
 returns		{ ECHO; return(RETURNS); }
 switch		{ ECHO; return(SWITCH); }
@@ -82,7 +82,7 @@ then		{ ECHO; return(THEN); }
 {dec}		{ ECHO; return(INT_LITERAL); }
 {char}		{ ECHO; return(CHAR_LITERAL); }
 {punc}		{ ECHO; return(yytext[0]); }
-.		{ ECHO; appendError(LEXICAL, yytext); }
+.		    { ECHO; appendError(LEXICAL, yytext); }
 %%
 
 int main() {
