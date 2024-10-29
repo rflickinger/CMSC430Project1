@@ -25,6 +25,8 @@ line		[\n]
 id		[A-Za-z]([A-Za-z0-9])*
 digit		[0-9]
 dec		{digit}+
+hectal	[0-9A-Fa-f]
+hex		#({hectal})+
 char		'.'
 punc		[\(\),:;]
 %%
@@ -56,6 +58,7 @@ end		{ ECHO; return(END); }
 endswitch	{ ECHO; return(ENDSWITCH); }
 function	{ ECHO; return(FUNCTION); }
 integer		{ ECHO; return(INTEGER); }
+{hex}	 	{ ECHO; return(INTEGER); }
 is		{ ECHO; return(IS); }
 list		{ ECHO; return(LIST); }
 of		{ ECHO; return(OF); }
