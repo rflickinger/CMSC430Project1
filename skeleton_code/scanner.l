@@ -27,7 +27,7 @@ digit		[0-9]
 dec		{digit}+
 hectal	[0-9A-Fa-f]
 hex		#({hectal})+
-char		'.'
+char		'[.\b\t\n\r\f]'
 punc		[\(\),:;]
 %%
 
